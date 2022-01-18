@@ -1,8 +1,7 @@
 const api = {
   endpoint: 'https://api.openweathermap.org/data/2.5/weather?q=',
   api_key: 'ce97fb71fad141c884e3962fba417c62',
-  unit: '&units=metric&APPID=',
-  language: '&lang=id'
+  unit: '&units=metric&APPID='
 }
 
 const search = document.querySelector('.search');
@@ -15,7 +14,7 @@ function setQuery(e) {
 }
 
 function weatherResults(query) {
-  fetch(`${api.endpoint}${query}${api.unit}${api.api_key}${api.language}`)
+  fetch(`${api.endpoint}${query}${api.unit}${api.api_key}`)
   .then(weather => {
     return weather.json();
   }).then(weatherDisplay);
